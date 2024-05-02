@@ -1,3 +1,65 @@
 .header {
-    color:red;
+  color: red;
+}
+
+.containers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.container {
+  width: 25%;
+  padding: 3px 10px;
+}
+
+.container h3 {
+  margin: 0;
+  padding: 6px 10px;
+  border-radius: 2px;
+}
+
+.todo-Container {
+  background-color: pink;
+}
+
+.todo-Container h3 {
+  margin: 0 0 5px 0;
+  padding: 3px 0px;
+}
+
+.inProgress-Container h3 {
+  background-color: orange;
+}
+
+.verification-Container h3 {
+  background-color: yellow;
+}
+
+.done-Container h3 {
+  background-color: green;
+}
+
+.item-container {
+  background-color: blue;
+  padding: 1px;
+}
+
+.single-item {
+  background-color: white;
+  margin: 2px;
+  padding: 2px 0 2px 30px;
+  border-radius: 2px;
+}
+
+.add-new-task {
+  display: flex;
+  justify-content: space-between;
+  margin: 7px 0;
+}
+
+@media only screen and (max-width: 814px) {
+  .containers {
+    flex-wrap: wrap;
+  }
 }
