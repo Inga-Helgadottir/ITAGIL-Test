@@ -14,7 +14,7 @@
   <body>
     <h2>Issues and incidents: 8</h2>
     <div class="issue-container">
-      <div class="containers">
+      <div id="containers">
         <div class="todo-Container container">
           <h3>TODO</h3>
           <div class="todo-item-container">
@@ -26,9 +26,15 @@
               <div class="header">Some incident 4</div>
               <div>Company3</div>
             </div>
+            <div class="add-new-tasks-here"></div>
             <div class="add-new-task">
-              <input type="text" id="add-task-input" name="add-task-input" />
-              <button>Add</button>
+              <input
+                type="text"
+                id="add-task-input"
+                name="add-task-input"
+                placeholder="Task; company"
+              />
+              <button id="add-button">Add</button>
             </div>
           </div>
         </div>

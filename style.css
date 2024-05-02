@@ -2,7 +2,7 @@
   color: red;
 }
 
-.containers {
+#containers {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -57,9 +57,12 @@
   justify-content: space-between;
   margin: 7px 0;
 }
+.add-new-task input {
+  padding: 0 5px;
+}
 
 @media only screen and (max-width: 814px) {
-  .containers {
+  #containers {
     flex-wrap: wrap;
   }
 }
