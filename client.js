@@ -15,6 +15,7 @@ $(document).ready(function () {
       } else {
         this.style.height = "";
       }
+      this.style.position = "reletive";
     });
   }
 
@@ -29,9 +30,6 @@ $(document).ready(function () {
       closestContainer.append(movingTask);
       checkForEmptyListAndAddSpaceForNewTask();
     },
-    stop: function (event, ui) {
-      movingTask.style.position = "reletive";
-    },
   });
 
   $("#add-button").click(function () {
@@ -44,22 +42,37 @@ $(document).ready(function () {
     }
   });
 
-  function addNewTask(taskToAdd) {
+  function addNewTask(taskToAdd, whereToAddIt) {
     var taskToAddArray = taskToAdd.split(";");
     var title = taskToAddArray[0];
     var company = taskToAddArray[1];
+    var type = taskToAddArray[2];
     if (company === undefined) {
-      var company = taskToAddArray[0];
+      company = taskToAddArray[0];
+    } else if (type === undefined) {
+      type = "issue";
     }
     var singleItem = $(
-      '<div class="single-item"><div class="header">' +
+      "<issue><title>" +
         title +
-        "</div><div>" +
+        "</title><type>" +
+        type +
+        "</type><state>" +
+        whereToAddIt +
+        "</state><company>" +
         company +
-        "</div></div>"
+        "</company></issue>"
     );
+    // var singleItem = $(
+    //   '<div class="single-item"><div class="header">' +
+    //     title +
+    //     "</div><div>" +
+    //     company +
+    //     "</div></div>"
+    // );
+    $xml.append(singleItem);
 
-    $(".add-new-tasks-here").append(singleItem);
+    // $(".add-new-tasks-here").append(singleItem);
     $(".single-item").draggable();
   }
 });
@@ -73,3 +86,6 @@ $(document).ready(function () {
 //https://www.elated.com/drag-and-drop-with-jquery-your-essential-guide/
 //https://gsap.com/community/forums/topic/17775-best-way-to-get-a-draggable-element-out-of-a-scrollable-area-draggable-bug/
 //https://stackoverflow.com/questions/11944270/only-allowing-one-droppable-area-jquery-drag-and-drop
+//https://stackoverflow.com/questions/26433147/how-can-i-append-data-to-my-xml-document-with-jquery
+//https://github.com/jquery/api.jquery.com/blob/main/entries/append.xml
+//https://www.w3schools.com/xml/met_text_appenddata.asp

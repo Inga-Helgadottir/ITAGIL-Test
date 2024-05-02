@@ -53,8 +53,10 @@
   background-color: white;
   margin: 2px;
   padding: 2px 0 2px 30px;
+  border: solid 1px black;
   border-radius: 2px;
   width: auto;
+  cursor: grab;
 }
 
 .add-new-task {
