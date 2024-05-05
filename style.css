@@ -1,3 +1,11 @@
+:root {
+  --color-toDoBg: pink;
+  --color-inProgressBg: orange;
+  --color-verificationBg: yellow;
+  --color-doneBg: green;
+  --color-emptyBg: blue;
+}
+
 .header {
   color: red;
 }
@@ -21,10 +29,12 @@
 
 .todo-Container {
   background-color: pink;
+  width: 25%;
+  padding: 3px 10px;
 }
 
 .todo-item-container {
-  background-color: pink !important;
+  background-color: var(--color-toDoBg) !important;
 }
 
 .todo-Container h3 {
@@ -33,19 +43,19 @@
 }
 
 .inProgress-Container h3 {
-  background-color: orange;
+  background-color: var(--color-inProgressBg);
 }
 
 .verification-Container h3 {
-  background-color: yellow;
+  background-color: var(--color-verificationBg);
 }
 
 .done-Container h3 {
-  background-color: green;
+  background-color: var(--color-doneBg);
 }
 
 .item-container {
-  background-color: blue;
+  background-color: var(--color-emptyBg);
   padding: 1px;
 }
 
@@ -59,14 +69,37 @@
   cursor: grab;
 }
 
-.add-new-task {
-  display: flex;
-  justify-content: space-between;
-  margin: 7px 0;
+#add-button {
+  background-color: yellowgreen;
+  border: solid 2px var(--color-doneBg);
+  margin: 10px 0;
 }
 
-.add-new-task input {
-  padding: 0 5px;
+.add-new-task-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 7px 0;
+  width: 300px;
+  background-color: var(--color-emptyBg);
+  padding: 5px 10px;
+}
+
+.add-new-task-heading {
+  margin: 6px 0;
+  color: white;
+  font-size: 24px;
+  text-decoration: underline;
+}
+
+.add-new-task-form input {
+  padding: 4px 10px;
+  margin: 5px 0;
+}
+
+.is-dragging {
+  background-color: gray;
+  border: solid 2px black;
 }
 
 @media only screen and (max-width: 814px) {
