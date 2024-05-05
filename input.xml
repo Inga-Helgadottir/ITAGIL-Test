@@ -6,42 +6,49 @@
     <state>todo</state>
     <company>Company3</company>
   </issue>
+
   <issue>
     <title>Some incident 2</title>
     <type>incident</type>
     <state>todo</state>
     <company>Company4</company>
   </issue>
+
   <issue>
     <title>Some issue 2</title>
     <type>issue</type>
     <state>verification</state>
     <company>Company4</company>
   </issue>
+
   <issue>
     <title>Some incident 3</title>
     <type>incident</type>
     <state>done</state>
     <company>Company1</company>
   </issue>
+  
   <issue>
     <title>Some issue 5</title>
     <type>issue</type>
     <state>in progress</state>
     <company>Company2</company>
   </issue>
+  
   <issue>
     <title>Some incident 4</title>
     <type>incident</type>
     <state>verification</state>
     <company>Company3</company>
   </issue>
+  
   <issue>
     <title>Some issue 6</title>
     <type>issue</type>
     <state>done</state>
     <company>Company4</company>
   </issue>
+  
   <issue>
     <title>Some incident 10</title>
     <type>incident</type>
