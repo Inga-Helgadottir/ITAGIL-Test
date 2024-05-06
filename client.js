@@ -3,9 +3,11 @@ $(document).ready(function () {
   $("h2").css("padding", "10px");
   $("h2").css("text-align", "center");
 
+  // get all the tasks and containers
   const draggables = document.querySelectorAll(".single-item");
   const dropContainers = document.querySelectorAll(".sortableContainer");
 
+  // looping through the tasks to give and remove the class is-dragging depending on weather the task is moving
   draggables.forEach((issue) => {
     issue.addEventListener("dragstart", () => {
       issue.classList.add("is-dragging");
@@ -15,7 +17,9 @@ $(document).ready(function () {
     });
   });
 
+  // looping through the containers
   dropContainers.forEach((dropContainer) => {
+    // when a task is dragged over a container
     dropContainer.addEventListener("dragover", (e) => {
       e.preventDefault();
 
