@@ -4,6 +4,8 @@ Jeg har lavet alt i output.html, style.css og client.js, Jeg prøvede at tilføj
 
 Jeg kørte det med en live server extension (Live Server, Ritwick Dey)
 
+Jeg har lavet en kopi af output, hvis i kommer til med at overskrive den
+
 Jeg håber at i kan lide resten af min kode :)
 
 # Her er alle de forskellige ting jeg prøvede for at tilføje til XML filen, jeg kunne godt lave en GET
