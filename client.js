@@ -3,68 +3,55 @@ $(document).ready(function () {
   $("h2").css("padding", "10px");
   $("h2").css("text-align", "center");
 
-  // var xhttp = new XMLHttpRequest();
-  // xhttp.onreadystatechange = function () {
-  //   if (this.readyState == 4 && this.status == 200) {
-  //     myFunction(this);
-  //   }
+  // const draggables = document.querySelectorAll(".single-item");
+  // const dropContainers = document.querySelectorAll(".sortableContainer");
+
+  // draggables.forEach((issue) => {
+  //   issue.addEventListener("dragstart", () => {
+  //     issue.classList.add("is-dragging");
+  //   });
+  //   issue.addEventListener("dragend", () => {
+  //     issue.classList.remove("is-dragging");
+  //   });
+  // });
+
+  // dropContainers.forEach((dropContainer) => {
+  //   dropContainer.addEventListener("dragover", (e) => {
+  //     e.preventDefault();
+
+  //     const bottomTask = insertAboveTask(dropContainer, e.clientY);
+  //     const currentTask = document.querySelector(".is-dragging");
+
+  //     if (!bottomTask) {
+  //       dropContainer.appendChild(currentTask);
+  //     } else {
+  //       dropContainer.insertBefore(currentTask, bottomTask);
+  //     }
+  //   });
+  // });
+
+  // const insertAboveTask = (dropContainer, mouseYPosition) => {
+  //   const notCurrentlyDraggingIssues = dropContainer.querySelectorAll(
+  //     ".task:not(.is-dragging)"
+  //   );
+
+  //   let closestTask;
+  //   let closestOffset = Number.NEGATIVE_INFINITY;
+
+  //   notCurrentlyDraggingIssues.forEach((issue) => {
+  //     const { top } = issue.getBoundingClientRect();
+
+  //     const offset = mouseYPosition - top;
+
+  //     if (offset < 0 && offset > closestOffset) {
+  //       closestOffset = offset;
+  //       closestTask = issue;
+  //     }
+  //   });
+
+  //   checkForEmptyListAndAddSpaceForNewTask();
+  //   return closestTask;
   // };
-  // xhttp.open("GET", "input.xml", true);
-  // xhttp.send();
-  myFunction();
-  // function myFunction(xml) {
-  function myFunction() {
-    //   console.log(xml);
-    //   var xmlDoc;
-    //   // var x, y, i, newElement, txt, xmlDoc;
-    //   xmlDoc = xml.responseXML;
-    // newElement = xmlDoc.createElement("edition");
-    // x = xmlDoc.getElementsByTagName("book")[0]
-    let issue = {
-      title: "test",
-      type: "issuesssssss",
-      state: "todo",
-      company: "comptest",
-    };
-
-    // ("<issue><title>testing</title><type>issue</type><state>todo</state><company>Company22222</company></issue>");
-    let newElement =
-      "<issue><title>testing</title><type>issue</type><state>todo</state><company>Company22222</company></issue>";
-    // // let newElement =
-    // //   "<issue><title>testing</title><type>issue</type><state>todo</state><company>Company22222</company></issue>";
-    // var parser = new DOMParser();
-    // // console.log(newElement);
-    // let elementParsed = parser.parseFromString(issue, "text/xml");
-    // // // let elementParsed = jQuery.parseXML(newElement);
-    // // console.log(elementParsed);
-
-    $.post(
-      "/input.xml",
-      "<issue><title>testing</title><type>issue</type><state>todo</state><company>Company22222</company></issue>"
-    );
-
-    // $.ajax({
-    //   headers: {
-    //     "Access-Control-Allow-Origin": "*",
-    //     "Access-Control-Allow-Methods": "GET, POST",
-    //     "Access-Control-Allow-Credentials": "true",
-    //   },
-    //   url: "/input.xml",
-    //   data: issue,
-    //   contentType: "text/xml",
-    //   dataType: "text/xml",
-    //   type: "POST",
-    //   success: function (result) {
-    //     console.log(result);
-    //   },
-    //   error: function (xhr, ajaxOptions, thrownError) {
-    //     console.log(xhr.status);
-    //     console.log(thrownError);
-    //   },
-    // });
-
-    // x.appendChild(newElement);
-  }
 
   // $(".add-new-task-form").submit(function (e) {
   //   e.preventDefault();
@@ -94,12 +81,19 @@ $(document).ready(function () {
   //       "</div></div>"
   //   );
 
-  //   $(".todo-item-container").append(singleItem);
-  //   // add to xml here--------------------------------------------------------
+  //   $(".todo-item-container").append(singleItem[0]);
+
+  //   singleItem[0].addEventListener("dragstart", () => {
+  //     singleItem[0].classList.add("is-dragging");
+  //   });
+
+  //   singleItem[0].addEventListener("dragend", () => {
+  //     singleItem[0].classList.remove("is-dragging");
+  //   });
   // }
 
   // function checkForEmptyListAndAddSpaceForNewTask() {
-  //   $(".item-container").each(function (index) {
+  //   $(".item-container").each(function () {
   //     if (this.children.length === 0) {
   //       this.style.height = "20px";
   //     } else {
@@ -107,6 +101,62 @@ $(document).ready(function () {
   //     }
   //   });
   // }
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+    }
+  };
+
+  let newElement = $(
+    "<issue><title>testing</title><type>issue</type><state>todo</state><company>Company22222</company></issue>"
+  );
+  let newElement1 =
+    "<issue><title>testing</title><type>issue</type><state>todo</state><company>Company22222</company></issue>";
+  let newElement2 =
+    "<issue><title>testing</title><type>issue</type><state>todo</state><company>Company22222</company></issue>";
+  let newElement3 =
+    "<issue><title>testing</title><type>issue</type><state>todo</state><company>Company22222</company></issue>";
+  let newElement4 =
+    "<issue><title></title><type>incident</type><state>verification</state><company>Comp test</company></issue>";
+  let newElement5 = {
+    title: "test",
+    type: "issuesssssss",
+    state: "todo",
+    company: "comptest",
+  };
+
+  // var parser = new DOMParser();
+  // console.log(newElement);
+  // let elementParsed = parser.parseFromString(newElement1, "text/xml");
+  let elementParsed = jQuery.parseXML(newElement5);
+  // console.log(elementParsed);
+
+  // $.post("input.xml", elementParsed);
+
+  $.ajax({
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "*",
+      "Access-Control-Allow-Credentials": "true",
+      "Access-Control-Allow-Headers": "content-type",
+    },
+    url: "/input.xml",
+    data: {
+      data: elementParsed,
+    },
+    contentType: "text/xml",
+    dataType: "text/xml",
+    type: "POST",
+    success: function (result) {
+      console.log(result);
+    },
+    error: function (xhr, thrownError) {
+      console.log(xhr.status);
+      console.log(thrownError);
+    },
+  });
 });
 
 //unit test google jest

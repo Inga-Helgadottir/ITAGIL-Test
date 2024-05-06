@@ -69,7 +69,7 @@
         </div>
       </div>
     </div>
-    <!--  here------------------------------------------------------------------ -->
+
     <form class="add-new-task-form">
       <h3 class="add-new-task-heading">Add a new issue or incident</h3>
       <input
@@ -84,12 +84,11 @@
         name="add-company-input"
         placeholder="Company"
       />
-      <input
-        type="text"
-        id="add-type-input"
-        name="add-type-input"
-        placeholder="Type (issue or incident)"
-      />
+      <select name="add-type-input" id="add-type-input" required>
+        <option value="" selected>Select your type</option>
+        <option value="issue">issue</option>
+        <option value="incident">incident</option>
+      </select>
       <input type="submit" id="add-button" value="Add" />
     </form>
   </body>

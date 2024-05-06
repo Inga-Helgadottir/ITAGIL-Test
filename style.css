@@ -92,13 +92,14 @@
   text-decoration: underline;
 }
 
-.add-new-task-form input {
+.add-new-task-form input,
+.add-new-task-form select {
   padding: 4px 10px;
   margin: 5px 0;
 }
 
 .is-dragging {
-  background-color: gray;
+  background-color: var(--color-emptyBg);
   border: solid 2px black;
 }
 
