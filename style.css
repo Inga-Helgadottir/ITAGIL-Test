@@ -19,6 +19,7 @@
 .container {
   width: 25%;
   padding: 3px 10px;
+  height: fit-content;
 }
 
 .container h3 {
