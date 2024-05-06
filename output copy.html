@@ -1,0 +1,95 @@
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-16" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"
+    />
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="client.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>Issues and incidents: 8</h2>
+
+    <div id="containers">
+      <div class="todo-Container">
+        <h3>TODO</h3>
+        <div class="todo-item-container sortableContainer">
+          <div class="single-item" draggable="true">
+            <div class="header">Some issue 1</div>
+            <div>Company3</div>
+          </div>
+          <div class="single-item" draggable="true">
+            <div class="header">Some incident 4</div>
+            <div>Company3</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="inProgress-Container container">
+        <h3>In Progress</h3>
+        <div class="item-container sortableContainer">
+          <div class="single-item" draggable="true">
+            <div class="header">Some incident 2</div>
+            <div>Company4</div>
+          </div>
+          <div class="single-item" draggable="true">
+            <div class="header">Some issue 5</div>
+            <div>Company2</div>
+          </div>
+        </div>
+      </div>
+      <div class="verification-Container container">
+        <h3>Verification</h3>
+        <div class="item-container sortableContainer">
+          <div class="single-item" draggable="true">
+            <div class="header">Some issue 2</div>
+            <div>Company4</div>
+          </div>
+          <div class="single-item" draggable="true">
+            <div class="header">Some issue 6</div>
+            <div>Company4</div>
+          </div>
+        </div>
+      </div>
+      <div class="done-Container container">
+        <h3>Done</h3>
+        <div class="item-container sortableContainer">
+          <div class="single-item" draggable="true">
+            <div class="header">Some incident 3</div>
+            <div>Company1</div>
+          </div>
+          <div class="single-item" draggable="true">
+            <div class="header">Some incident 10</div>
+            <div>Company3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form class="add-new-task-form">
+      <h3 class="add-new-task-heading">Add a new issue or incident</h3>
+      <input
+        type="text"
+        id="add-task-input"
+        name="add-task-input"
+        placeholder="Task"
+      />
+      <input
+        type="text"
+        id="add-company-input"
+        name="add-company-input"
+        placeholder="Company"
+      />
+      <select name="add-type-input" id="add-type-input" required>
+        <option value="" selected>Select your type</option>
+        <option value="issue">issue</option>
+        <option value="incident">incident</option>
+      </select>
+      <input type="submit" id="add-button" value="Add" />
+    </form>
+  </body>
+</html>
