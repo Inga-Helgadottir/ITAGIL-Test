@@ -1,6 +1,10 @@
 # I denne folder ligger en ITAGIL test lavet af S. Inga Helgadottir
 
-Jeg har lavet alt i output.html, style.css og client.js, Jeg prøvede at tilføje til xml filen men jeg fik altid en fejl, jeg mangler noget hjælp for at løse den del af opgaven
+Jeg har lavet alt i output.html, style.css og client.js,
+
+Jeg prøvede at tilføje til xml filen men jeg fik altid en fejl, jeg mangler noget hjælp for at løse den del af opgaven
+
+Under webudvikleren blev vi kun introduceret til XML og JQuery, vi gik ikke så dybt ind i det, men jeg kan helt sikkert blive god til efter kort tid med lidt hjælp
 
 Jeg kørte det med en live server extension (Live Server, Ritwick Dey)
 
@@ -12,7 +16,7 @@ Jeg håber at i kan lide resten af min kode :)
 
 ```javascript
 
-$.ajax({ // denne get virker
+$.ajax({ // denne GET virker
 
 url: "input.xml",
 type: "GET",

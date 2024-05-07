@@ -48,9 +48,9 @@ $(document).ready(function () {
     let closestTask;
     let offsetForClosest = Number.NEGATIVE_INFINITY;
 
+    // looping through the tasks that are not dragging and find the appropriate drop location
     notCurrentlyDragging.forEach((issue) => {
       const { top } = issue.getBoundingClientRect();
-
       const offset = mouseYPosition - top;
 
       if (offset <= 0 && offset >= offsetForClosest) {
@@ -63,11 +63,15 @@ $(document).ready(function () {
     return closestTask;
   };
 
+  // handle submit for the add new task form
   $(".add-new-task-form").submit(function (e) {
     e.preventDefault();
+    // getting all the input values
     let inputValueTask = $("#add-task-input").val();
     let inputValueCompany = $("#add-company-input").val();
     let inputValueType = $("#add-type-input").val();
+
+    // making sure they are not empty
     if (
       inputValueTask === "" ||
       inputValueCompany === "" ||
@@ -76,12 +80,14 @@ $(document).ready(function () {
       alert("You need to add the relevant information: task, company and type");
     } else {
       addNewTask(inputValueTask, inputValueCompany, inputValueType);
+      // empty all input values
       $("#add-task-input").val("");
       $("#add-company-input").val("");
       $("#add-type-input").val("");
     }
   });
 
+  // adding the new task to the todo list
   function addNewTask(task, company, type) {
     let singleItem = $(
       '<div class="single-item" draggable="true"> <div class="header">' +
@@ -93,6 +99,7 @@ $(document).ready(function () {
 
     $(".todo-item-container").append(singleItem[0]);
 
+    // adding the drag properties
     singleItem[0].addEventListener("dragstart", () => {
       singleItem[0].classList.add("is-dragging");
     });
@@ -102,12 +109,14 @@ $(document).ready(function () {
     });
   }
 
+  // this function is because if a list is empty there is no space to add a task, so here if the list is empty i give the container a height of 20
   function checkForEmptyListAndAddSpaceForNewTask() {
+    // looping through all the list containers to check if they are empty
     $(".item-container").each(function () {
       if (this.children.length === 0) {
         this.style.height = "20px!important";
       } else {
-        this.style.height = "";
+        this.style.height = "fit-content";
       }
     });
   }
