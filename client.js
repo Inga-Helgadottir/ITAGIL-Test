@@ -109,7 +109,7 @@ $(document).ready(function () {
     });
   }
 
-  // this function is because if a list is empty there is no space to add a task, so here if the list is empty i give the container a height of 20
+  // this function is because if a list is empty there is no space to add a task, so in that case I give the container a height of 20px
   function checkForEmptyListAndAddSpaceForNewTask() {
     // looping through all the list containers to check if they are empty
     $(".item-container").each(function () {
